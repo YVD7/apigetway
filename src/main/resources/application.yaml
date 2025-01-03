@@ -1,0 +1,18 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: producer
+          uri: http://localhost:8081
+          predicates:
+            - Path=/producer/**
+
+        - id: comsumer
+          uri: http://localhost:8082
+          predicates:
+            - Path=/comsumer/**
+
+        - id: reader
+          uri: http://localhost:8083
+          predicates:
+            - Path=/reader/**
